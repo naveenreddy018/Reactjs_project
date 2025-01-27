@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import './modal.css';
 import ImageComponent from '../ImageComponent/image';
 import { assets } from '../../assets/assets';
+import { photo } from '../interface/setting'; 
 
 function FormModal({ name }) {
   const [displayModal, setDisplayModal] = useState(true);
@@ -32,6 +33,9 @@ function FormModal({ name }) {
     }
   };
 
+
+  const profilePhoto = photo[photo.length - 1];
+
   return (
     <div className="modal-container modal show">
       {displayModal && (
@@ -45,9 +49,9 @@ function FormModal({ name }) {
           <Modal.Body>
             <Form className="form-container" onSubmit={handleSubmit}>
               <div className="user-icon">
-                <ImageComponent src={assets.user_icon} />
+               
+                <ImageComponent src={profilePhoto} />
               </div>
-
 
               <Form.Group className="mb-3">
                 <Form.Label className="custom-label">

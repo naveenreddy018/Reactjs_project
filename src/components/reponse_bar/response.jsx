@@ -12,7 +12,6 @@ import { photo } from '../interface/setting';
 
 export const Array = [];
 
-
 function Response_Bar() {
     const [Display, setDisplay] = useState(false);
     const [prompt, setPrompt] = useState("");
@@ -73,6 +72,9 @@ function Response_Bar() {
         setRecent_items(cardText);
     };
 
+    // Get the last photo from the 'photo' array (if available)
+    const profilePhoto = photo && photo.length > 0 ? photo[photo.length - 1] : assets.user_icon;
+
     return (
         <div className="response-container">
             <div className="header">
@@ -89,8 +91,7 @@ function Response_Bar() {
                         </a>
                     </div>
                     <div className="toggle_bar">
-                        <button   
-                        >
+                        <button>
                             <Link to="/auth">Return to Home</Link>
                         </button>
                     </div>
@@ -103,11 +104,12 @@ function Response_Bar() {
                         </a>
                     </div>
                     <div className="nav-user-icon">
-                    <ImageComponent
-      src={photo && photo.length > 0 ? photo[0] : assets.user_icon} 
-      style={{ width: 40, borderRadius: "50%" }}
-      onClick={() => setUserModalBody((prev) => !prev)} 
-    />
+                        {/* Use the last photo from the 'photo' array */}
+                        <ImageComponent
+                            src={profilePhoto}
+                            style={{ width: 40, borderRadius: "50%" }}
+                            onClick={() => setUserModalBody((prev) => !prev)} 
+                        />
                     </div>
                     {userModalBody && <FormModal className="pos" name={Username} />}
                 </div>
@@ -136,7 +138,6 @@ function Response_Bar() {
                         <p>How can I help you?</p>
                     </div>
                     <div className="cards">
-                       
                         <div
                             className="card"
                             onClick={() =>
@@ -189,7 +190,7 @@ function Response_Bar() {
                 </div>
                 <div className="additonal-icons">
                     <div className="mic-icon">
-                        <ImageComponent  src={assets.mic_icon} style={{ width: 30 }} />
+                        <ImageComponent src={assets.mic_icon} style={{ width: 30 }} />
                     </div>
                     <div>
                         <input
