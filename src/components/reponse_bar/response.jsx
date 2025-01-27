@@ -70,6 +70,7 @@ function Response_Bar() {
         setDisplay(true); 
         setRecent_items(cardText); 
         setClicked(true); 
+        setRecent_items(cardText);
     };
 
     return (
