@@ -48,8 +48,8 @@
   }
   .dropdown-item:nth-child(1){
     position: absolute;
-    top: 10px;
-    right: 0px;
+    top: 10%;
+    right: 0%;
 
   }
   .dropdown-item:hover {

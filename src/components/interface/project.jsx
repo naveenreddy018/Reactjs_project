@@ -97,19 +97,19 @@ function AboutGeminiAI() {
 
         <h3 style={styles.subHeading}>Applications of Gemini AI</h3>
         <ul style={styles.featuresList}>
-          <li>
+          <li style={styles.li}>
             <strong>Healthcare:</strong> Automating patient interactions,
             providing medical advice, and analyzing patient data.
           </li>
-          <li>
+          <li style={styles.li}>
             <strong>Education:</strong> Delivering personalized learning
             experiences, virtual tutors, and generating lesson plans.
           </li>
-          <li>
+          <li style={styles.li}>
             <strong>Marketing:</strong> Crafting compelling content, analyzing
             trends, and automating campaigns.
           </li>
-          <li>
+          <li style={styles.li}>
             <strong>Customer Support:</strong> Providing instant responses,
             resolving issues, and streamlining workflows.
           </li>
@@ -147,18 +147,18 @@ function AboutGeminiAI() {
 
         <h3 style={styles.subHeading}>Benefits of Gemini AI</h3>
         <ul style={styles.featuresList}>
-          <li>Improved decision-making through data-driven insights.</li>
-          <li>Enhanced user engagement through personalized interactions.</li>
-          <li>Increased efficiency by automating repetitive tasks.</li>
-          <li>Scalability to meet growing demands in real-time.</li>
+          <li style={styles.li}>Improved decision-making through data-driven insights.</li>
+          <li style={styles.li}>Enhanced user engagement through personalized interactions.</li>
+          <li style={styles.li}>Increased efficiency by automating repetitive tasks.</li>
+          <li style={styles.li}>Scalability to meet growing demands in real-time.</li>
         </ul>
 
         <h3 style={styles.subHeading}>Technologies Used in Gemini AI</h3>
         <ul style={styles.featuresList}>
-          <li><strong>Backend:</strong> Node.js, Express.js, and MongoDB.</li>
-          <li><strong>Frontend:</strong> React.js, Redux, and Bootstrap.</li>
-          <li><strong>AI Technologies:</strong> Natural Language Processing, Machine Learning, and Deep Learning.</li>
-          <li><strong>Cloud:</strong> AWS for hosting and scalability.</li>
+          <li style={styles.li}><strong>Backend:</strong> Node.js, Express.js, and MongoDB.</li>
+          <li style={styles.li}><strong>Frontend:</strong> React.js, Redux, and Bootstrap.</li>
+          <li style={styles.li}><strong>AI Technologies:</strong> Natural Language Processing, Machine Learning, and Deep Learning.</li>
+          <li style={styles.li}><strong>Cloud:</strong> AWS for hosting and scalability.</li>
         </ul>
 
         <h3 style={styles.subHeading}>Future of Gemini AI</h3>
@@ -212,6 +212,10 @@ const styles = {
       boxShadow: "0px 6px 15px rgba(255, 165, 0, 0.6)",
       backgroundColor: "#444",
     },
+  },
+  li : {
+    color : "white",
+    fontSize : "1.1rem"
   },
   videoCardImage: {
     width: "100%",
@@ -287,7 +291,7 @@ const styles = {
   },
   description: {
     fontSize: "18px",
-    color: "#e0e0e0",
+    color: "#ffffff",
     lineHeight: "1.8",
     marginBottom: "15px",
   },

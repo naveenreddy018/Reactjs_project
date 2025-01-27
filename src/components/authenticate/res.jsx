@@ -95,14 +95,6 @@ function AppNavbar({ toggleTheme, isDarkMode }) {
 
                   {profile && (
                     <div className="dropdown-menu" style={styles.profileMenu}>
-                      <Button
-                        variant="link"
-                        className="dropdown-item"
-                        onClick={() => navigate('/profile')}
-                        style={styles.profileItem}
-                      >
-                        View Profile
-                      </Button>
                       <Button variant="link" className="dropdown-item" onClick={handleLogout} style={styles.profileItem}>
                         Logout
                       </Button>
@@ -199,7 +191,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     cursor: 'pointer',
-    // boxShadow: '0 4px 10px rgba(0, 0, 0, 0.2)',
+
     transition: 'transform 0.3s ease',
   },
 
@@ -213,7 +205,7 @@ const styles = {
     padding: '0px !important',
     minWidth: '10px',
     border: 'none',
-    top: '-10px',
+    top: '-10%',
   },
 
   profileItem: {
@@ -226,7 +218,6 @@ const styles = {
     fontWeight: 800,
   },
 
-  // Media Queries for responsiveness
   '@media (max-width: 768px)': {
     navBrand: {
       fontSize: '18px',
