@@ -23,24 +23,24 @@ function Response_Bar() {
     const [userModalBody, setUserModalBody] = useState(false);
     const [clicked, setClicked] = useState(false);
 
-   
     const storedUsername = localStorage.getItem('Username');
     const storedPhoto = localStorage.getItem('profilePhoto');
     const [username, setUsername] = useState(storedUsername || 'Guest');
-    const [profilePhoto, setProfilePhoto] = useState(storedPhoto || (photo && photo.length > 0 ? photo[photo.length - 1] : assets.user_icon));
-
+    const [profilePhoto, setProfilePhoto] = useState(
+        storedPhoto || (photo && photo.length > 0 ? photo[photo.length - 1] : assets.user_icon)
+    );
 
     const handlePhotoChange = (newPhoto) => {
-        setProfilePhoto(newPhoto);
-        localStorage.setItem('profilePhoto', newPhoto);
+        const photoToSet = newPhoto || assets.user_icon;
+        setProfilePhoto(photoToSet);
+        localStorage.setItem('profilePhoto', photoToSet);
     };
-
 
     const handleLogout = () => {
         localStorage.removeItem('Username');
         localStorage.removeItem('profilePhoto');
         setUsername('Guest');
-        setProfilePhoto(assets.user_icon);  // Reset to default user icon
+        setProfilePhoto(assets.user_icon);
     };
 
     useEffect(() => {
@@ -81,12 +81,12 @@ function Response_Bar() {
     };
 
     const handleCardClick = (cardText) => {
-        setPrompt(cardText); 
-        setSendRequest(cardText); 
-        setLoading(true); 
-        setDisplay(true); 
-        setRecent_items(cardText); 
-        setClicked(true); 
+        setPrompt(cardText);
+        setSendRequest(cardText);
+        setLoading(true);
+        setDisplay(true);
+        setRecent_items(cardText);
+        setClicked(true);
         setRecent_items(cardText);
     };
 
@@ -120,11 +120,11 @@ function Response_Bar() {
                     </div>
                     <div className="nav-user-icon">
                         <ImageComponent
-                            src={profilePhoto}
+                              src={photo && photo.length > 0 ? photo[photo.length - 1] : assets.user_icon} 
                             style={{ width: 40, borderRadius: "50%" }}
                             onClick={() => {
                                 setUserModalBody((prev) => !prev);
-                                handlePhotoChange();  
+                                handlePhotoChange();
                             }}
                         />
                     </div>
@@ -229,21 +229,20 @@ function Response_Bar() {
                         ></label>
                     </div>
                     <div className="send-icon">
-    <ImageComponent
-        src={assets.send_icon}
-        style={{ width: 30 }}
-        onClick={() => {
-            if (prompt.trim()) {
-                if (!Display) setDisplay(true);
-                setSendRequest(prompt);
-                setLoading(true);
-                setRecent_items(prompt);
-                setClicked(true);
-            }
-        }}
-    />
-</div>
-
+                        <ImageComponent
+                            src={assets.send_icon}
+                            style={{ width: 30 }}
+                            onClick={() => {
+                                if (prompt.trim()) {
+                                    if (!Display) setDisplay(true);
+                                    setSendRequest(prompt);
+                                    setLoading(true);
+                                    setRecent_items(prompt);
+                                    setClicked(true);
+                                }
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>
