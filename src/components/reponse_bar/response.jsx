@@ -23,7 +23,25 @@ function Response_Bar() {
     const [userModalBody, setUserModalBody] = useState(false);
     const [clicked, setClicked] = useState(false);
 
-    console.log(photo)
+    // Load Username and photo from localStorage
+    const storedUsername = localStorage.getItem('Username');
+    const storedPhoto = localStorage.getItem('profilePhoto');
+    const [username, setUsername] = useState(storedUsername || 'Guest');
+    const [profilePhoto, setProfilePhoto] = useState(storedPhoto || (photo && photo.length > 0 ? photo[photo.length - 1] : assets.user_icon));
+
+    // Set photo to localStorage when updated
+    const handlePhotoChange = (newPhoto) => {
+        setProfilePhoto(newPhoto);
+        localStorage.setItem('profilePhoto', newPhoto);
+    };
+
+    // Handle Logout: clear Username and photo from localStorage and reset array
+    const handleLogout = () => {
+        localStorage.removeItem('Username');
+        localStorage.removeItem('profilePhoto');
+        setUsername('Guest');
+        setProfilePhoto(assets.user_icon);  // Reset to default user icon
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -72,9 +90,6 @@ function Response_Bar() {
         setRecent_items(cardText);
     };
 
-    // Get the last photo from the 'photo' array (if available)
-    const profilePhoto = photo && photo.length > 0 ? photo[photo.length - 1] : assets.user_icon;
-
     return (
         <div className="response-container">
             <div className="header">
@@ -92,7 +107,7 @@ function Response_Bar() {
                     </div>
                     <div className="toggle_bar">
                         <button>
-                            <Link to="/auth">Return to Home</Link>
+                            <Link to="/auth" onClick={handleLogout}>Logout</Link>
                         </button>
                     </div>
                     <div className="nav-hamburger">
@@ -104,14 +119,13 @@ function Response_Bar() {
                         </a>
                     </div>
                     <div className="nav-user-icon">
-                        {/* Use the last photo from the 'photo' array */}
                         <ImageComponent
                             src={profilePhoto}
                             style={{ width: 40, borderRadius: "50%" }}
                             onClick={() => setUserModalBody((prev) => !prev)} 
                         />
                     </div>
-                    {userModalBody && <FormModal className="pos" name={Username} />}
+                    {userModalBody && <FormModal className="pos" name={username} />}
                 </div>
             </div>
             {Display ? (
@@ -133,7 +147,7 @@ function Response_Bar() {
                 <div className="main">
                     <div className="greet">
                         <p>
-                            <span>Hello {Username}</span>
+                            <span>Hello {username}</span>
                         </p>
                         <p>How can I help you?</p>
                     </div>
