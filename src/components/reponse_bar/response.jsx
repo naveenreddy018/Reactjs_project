@@ -229,18 +229,21 @@ function Response_Bar() {
                         ></label>
                     </div>
                     <div className="send-icon">
-                        <ImageComponent
-                            src={assets.send_icon}
-                            style={{ width: 30 }}
-                            onClick={() => {
-                                if (!Display) setDisplay(true);
-                                setSendRequest(prompt);
-                                setLoading(true);
-                                setRecent_items(prompt);
-                                setClicked(true);
-                            }}
-                        />
-                    </div>
+    <ImageComponent
+        src={assets.send_icon}
+        style={{ width: 30 }}
+        onClick={() => {
+            if (prompt.trim()) {
+                if (!Display) setDisplay(true);
+                setSendRequest(prompt);
+                setLoading(true);
+                setRecent_items(prompt);
+                setClicked(true);
+            }
+        }}
+    />
+</div>
+
                 </div>
             </div>
         </div>
