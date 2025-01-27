@@ -23,19 +23,19 @@ function Response_Bar() {
     const [userModalBody, setUserModalBody] = useState(false);
     const [clicked, setClicked] = useState(false);
 
-    // Load Username and photo from localStorage
+   
     const storedUsername = localStorage.getItem('Username');
     const storedPhoto = localStorage.getItem('profilePhoto');
     const [username, setUsername] = useState(storedUsername || 'Guest');
     const [profilePhoto, setProfilePhoto] = useState(storedPhoto || (photo && photo.length > 0 ? photo[photo.length - 1] : assets.user_icon));
 
-    // Set photo to localStorage when updated
+
     const handlePhotoChange = (newPhoto) => {
         setProfilePhoto(newPhoto);
         localStorage.setItem('profilePhoto', newPhoto);
     };
 
-    // Handle Logout: clear Username and photo from localStorage and reset array
+
     const handleLogout = () => {
         localStorage.removeItem('Username');
         localStorage.removeItem('profilePhoto');
@@ -107,7 +107,7 @@ function Response_Bar() {
                     </div>
                     <div className="toggle_bar">
                         <button>
-                            <Link to="/auth" onClick={handleLogout}>Logout</Link>
+                            <Link to="/auth" >Return to home</Link>
                         </button>
                     </div>
                     <div className="nav-hamburger">
@@ -122,7 +122,10 @@ function Response_Bar() {
                         <ImageComponent
                             src={profilePhoto}
                             style={{ width: 40, borderRadius: "50%" }}
-                            onClick={() => setUserModalBody((prev) => !prev)} 
+                            onClick={() => {
+                                setUserModalBody((prev) => !prev);
+                                handlePhotoChange();  
+                            }}
                         />
                     </div>
                     {userModalBody && <FormModal className="pos" name={username} />}
