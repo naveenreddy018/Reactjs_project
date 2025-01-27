@@ -89,7 +89,7 @@ function AppNavbar({ toggleTheme, isDarkMode }) {
 
   const handleLogout = () => {
     localStorage.removeItem('token'); 
-    navigate('/login'); 
+    navigate('/'); 
   };
 
 
@@ -146,7 +146,7 @@ function AppNavbar({ toggleTheme, isDarkMode }) {
                 </Nav.Item>
               </Nav>
               <Button variant={isDarkMode ? 'outline-light' : 'outline-dark'} title='Toggle button' onClick={toggleTheme} className="toggle" style={styles.toggleButton}>
-              {isDarkMode ? '🌙' : '☀️'}
+              {isDarkMode ? '🌙' : '🌞'}
               </Button>
             </Navbar.Collapse>
           </Container>

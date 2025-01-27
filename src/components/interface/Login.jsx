@@ -52,7 +52,7 @@ const Login = () => {
     };
 
     const handleRegisterClick = () => {
-        navigate("/");
+        navigate("/register");
     };
 
     const handleGuestLogin = () => {

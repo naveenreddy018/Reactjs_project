@@ -16,11 +16,11 @@ function App() {
     <Router>
       <Routes>
 
-        <Route path="/" element={<Register />} />
+        <Route path="/register" element={<Register />} />
  
         <Route path="/about" element={<AboutGeminiAI/>} />
 
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
          <Route path="/chat" element={<div ><Hello /></div>} />
         <Route path="/auth" element={<div ><App3 /></div>} />
             <Route path="/Help" element={<Help />} />

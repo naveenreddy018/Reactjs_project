@@ -12,7 +12,7 @@ const Profile = () => {
         const token = localStorage.getItem('token');
         if (!token) {
             alert('Please log in first');
-            navigate('/login');
+            navigate('/');
         } else {
             const sanitizedToken = token.replace(/^"|"$/g, '');
             fetchProfile(sanitizedToken);
@@ -34,7 +34,7 @@ const Profile = () => {
             } else {
                 const error = await response.text();
                 alert(error);
-                navigate('/login');
+                navigate('/');
             }
         } catch (error) {
             alert(error , 'Something went wrong!');

@@ -51,7 +51,7 @@ const Register = () => {
   
       if (data.message === 'resgistered successfully') {
         alert('You have registered successfully!');
-        navigate('/login'); 
+        navigate('/'); 
       } else {
         alert(data.message);
       }
@@ -128,7 +128,7 @@ const Register = () => {
 
         <div style={styles.buttonsSection}>
          
-          <button onClick={() => handleNavigate('/login')} style={styles.loginBtn}>Login</button>
+          <button onClick={() => handleNavigate('/')} style={styles.loginBtn}>Login</button>
         </div>
       </div>
     </div>
