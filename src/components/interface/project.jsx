@@ -9,21 +9,21 @@ function AboutGeminiAI() {
       title: "The Evolution of Artificial Intelligence",
       description:
         "Explore the journey of AI from its inception to modern advancements in machine learning, neural networks, and generative AI models.",
-      src: ` ${assets.video1}`,
+      src: ` ${assets.videos1}`,
       image: "https://miro.medium.com/v2/resize:fit:800/1*i5lWPdCc-p58TcgQjmCeTw.jpeg",
     },
     {
       title: "How AI is Transforming the World",
       description:
         "Understand how AI is impacting industries such as healthcare, finance, education, and entertainment with real-world examples.",
-      src  : ` ${assets.video2}` ,
+      src  : ` ${assets.videos2}` ,
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT2GAn0g9pvwC_7e0DPBj7VY5pkMuxQO6JzQ&s", 
     },
     {
       title: "AI and the Future of Work",
       description:  
         "Learn about the role of AI in reshaping jobs, creating new opportunities, and automating repetitive tasks in workplaces." ,
-      src: ` ${assets.video3}`  ,
+      src: ` ${assets.videos3}`  ,
       image: "https://systango-website.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2023/12/12115325/12th-Dec-2023_1-1.jpg",
     },
   ];

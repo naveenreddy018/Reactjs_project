@@ -16,9 +16,9 @@ import gemini_icon from './gemini_icon.png'
 import hamburger from "./hamburger.png"
 import Gemini_Advanced_logo from "./Gemini_Advanced_logo.svg.png"
 import toggle from "./toggle.png"
-import video1 from "./video1.mp4"
-import video2 from "./video2.mp4"
-import video3 from "./video3.mp4"
+import videos1 from "./videos1.mp4"
+import videos2 from "./videos2.mp4"
+import videos3 from "./vidoes3.mp4"
 
 
 
@@ -41,7 +41,7 @@ export const assets = {
     Gemini_Advanced_logo,
     hamburger,
     toggle,
-    video1,
-    video2,
-    video3
+    videos1,
+    videos2,
+    videos3
 }
